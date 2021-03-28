@@ -60,10 +60,8 @@ public class BeerControllerTest {
     void whenPOSTIsCalledThenABeerIsCreated() throws Exception {
         // given
         BeerDTO beerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
-
         // when
         when(beerService.createBeer(beerDTO)).thenReturn(beerDTO);
-
         // then
         mockMvc.perform(post(BEER_API_URL_PATH)
                 .contentType(MediaType.APPLICATION_JSON)
